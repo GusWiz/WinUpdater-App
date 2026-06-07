@@ -74,7 +74,7 @@ namespace WinUpdater {
             
             // Assume updates are available
             std::cout << "[INFO] Updates are available." << std::endl;
-            // Optionally, output the list of apps: std::cout << output;
+            std::cout << output;
             return true;
 
         } catch (const std::exception& e) {
