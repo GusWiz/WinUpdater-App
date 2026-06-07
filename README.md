@@ -44,3 +44,38 @@ The project follows a **Separation of Concerns (Modular)** architecture, divided
 - **Maintainability**: If Windows changes how it updates apps, you only update the Platform/Controller layer. The Entry/UI remains untouched.
 - **Safety & Stability**: Handling the execution safely in its own scoped functionality allows the app to catch errors or interruptions (like `Ctrl+C`) gracefully, letting the Windows package manager roll back or cancel cleanly.
 - **Extensibility**: It paves the way to easily add features like logging, configuration files, or skipping specific apps.
+
+---
+
+## Getting Started
+
+### Prerequisites
+- **Windows 10 or 11**: This app uses the `winget` command-line tool which is pre-installed on modern Windows versions.
+- **C++ Compiler**: You will need a C++ compiler (like `g++` from MinGW or `MSVC` from Visual Studio) installed and added to your system `PATH`.
+- **Administrator Privileges**: You must run the terminal as **Administrator** for `winget` to have permission to install updates.
+
+### Compilation and Execution
+
+#### Using MinGW (g++)
+1. Open PowerShell or Command Prompt as **Administrator**.
+2. Navigate to the project folder.
+3. Compile using:
+   ```powershell
+   g++ -std=c++11 main.cpp updater.cpp -o WinUpdater.exe
+   ```
+4. Run using:
+   ```powershell
+   .\WinUpdater.exe
+   ```
+
+#### Using MSVC (cl.exe)
+1. Open the **Developer Command Prompt for VS**.
+2. Navigate to the project folder.
+3. Compile using:
+   ```cmd
+   cl /EHsc main.cpp updater.cpp /Fe:WinUpdater.exe
+   ```
+4. Run using:
+   ```cmd
+   WinUpdater.exe
+   ```
